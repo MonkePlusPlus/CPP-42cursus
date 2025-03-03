@@ -6,7 +6,8 @@ BUILD_DIR = ./build/
 INCLUDES = ./includes/
 
 # ALL FILES
-FILES = 
+FILES = PhoneBook.cpp
+FILES += Contact.cpp
 # END FILES
 
 SRC_FILES = $(addprefix $(SRC_DIR), $(FILES))
