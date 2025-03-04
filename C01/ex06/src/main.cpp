@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/04 17:26:53 by ptheo             #+#    #+#             */
-/*   Updated: 2025/03/04 23:04:57 by ptheo            ###   ########.fr       */
+/*   Created: 2025/03/04 23:08:45 by ptheo             #+#    #+#             */
+/*   Updated: 2025/03/05 00:24:40 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanB.hpp"
+#include "Harl.hpp"
 
-HumanB::HumanB(str name): _name(name) {};
-
-void HumanB::setWeapon(Weapon &weapon) {
-	this->_weapon = &weapon;
-}
-
-void HumanB::attack(){
-	if (this->_weapon == NULL)
-		std::cout << this->_name << " has no weapon but still attacks with their bare hands!!" << std::endl;
-	else
-		std::cout << this->_name << " attacks with their " << this->_weapon->getType() << std::endl;
+int	main(int ac, char *av[]) {
+    Harl Harl;
+    str level;
+    
+    if (ac != 2){
+        std::cout << "Error number argument" << std::endl;
+        return (-1);
+    }
+    level = av[1];
+    Harl.complain(level);
+    return (0);
 }

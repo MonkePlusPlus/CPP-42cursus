@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.cpp                                         :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/04 17:26:53 by ptheo             #+#    #+#             */
-/*   Updated: 2025/03/04 23:04:57 by ptheo            ###   ########.fr       */
+/*   Created: 2025/03/04 23:09:20 by ptheo             #+#    #+#             */
+/*   Updated: 2025/03/04 23:36:45 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanB.hpp"
+#pragma once
 
-HumanB::HumanB(str name): _name(name) {};
+#include <iostream>
+#include <string>
+#include <map>
 
-void HumanB::setWeapon(Weapon &weapon) {
-	this->_weapon = &weapon;
-}
+typedef std::string str;
 
-void HumanB::attack(){
-	if (this->_weapon == NULL)
-		std::cout << this->_name << " has no weapon but still attacks with their bare hands!!" << std::endl;
-	else
-		std::cout << this->_name << " attacks with their " << this->_weapon->getType() << std::endl;
-}
+class Harl
+{
+	private:
+		void	debug( void );
+		void	info( void );
+		void	warning( void );
+		void	error( void );
+
+	public:
+		Harl( void );
+		~Harl();
+		void	complain( str level );
+};

@@ -6,7 +6,7 @@
 #    By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/03 21:10:14 by ptheo             #+#    #+#              #
-#    Updated: 2025/03/04 21:07:12 by ptheo            ###   ########.fr        #
+#    Updated: 2025/03/04 23:10:57 by ptheo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ INCLUDES = ./includes/
 
 # ALL FILES
 FILES = main.cpp
+FILES += Harl.cpp
 # END FILES
 
 SRC_FILES = $(addprefix $(SRC_DIR), $(FILES))
@@ -26,7 +27,7 @@ OBJ_FILES = $(patsubst $(SRC_DIR)%.cpp, $(BUILD_DIR)%.o, $(SRC_FILES))
 
 DEP_FILES = $(patsubst $(SRC_DIR)%.cpp, $(BUILD_DIR)%.d, $(SRC_FILES))
 
-NAME		:= ex04
+NAME		:= ex05
 CXX			:= c++
 CXXFLAGS	:=  -gdwarf-4 -Wall -Wextra -Werror -I $(INCLUDES) -MMD -MP -std=c++98
 

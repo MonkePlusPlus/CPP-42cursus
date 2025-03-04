@@ -6,13 +6,14 @@
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 17:39:47 by ptheo             #+#    #+#             */
-/*   Updated: 2025/03/03 21:09:35 by ptheo            ###   ########.fr       */
+/*   Updated: 2025/03/04 22:58:22 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string>
 #include <iostream>
 #include <cstdlib>
+#include <cctype>
 
 #include "PhoneBook.hpp"
 
@@ -26,7 +27,7 @@ void PhoneBook::addContact() {
 
 	std::cout << "[Enter the First Name of the contact]" << std::endl;
 	std::getline(std::cin, line);
-	while (line.empty()){
+	while (line.empty() && !std::cin.eof()){
 		std::cout << "[First Name can't be empty]" << std::endl;
 		getline(std::cin, line);
 	}
@@ -35,7 +36,7 @@ void PhoneBook::addContact() {
 
 	std::cout << "[Enter the Last Name of the contact]" << std::endl;
 	getline(std::cin, line);
-	while (line.empty()){
+	while (line.empty() && !std::cin.eof()){
 		std::cout << "[Last Name can't be empty]" << std::endl;
 		getline(std::cin, line);
 	}
@@ -44,7 +45,7 @@ void PhoneBook::addContact() {
 
 	std::cout << "[Enter the Nickname of the contact]" << std::endl;
 	getline(std::cin, line);
-	while (line.empty()){
+	while (line.empty() && !std::cin.eof()){
 		std::cout << "[Nickame can't be empty]" << std::endl;
 		getline(std::cin, line);
 	}
@@ -53,14 +54,25 @@ void PhoneBook::addContact() {
 
 	std::cout << "[Enter the darkest secret of the contact]" << std::endl;
 	std::getline(std::cin, line);
-	while (line.empty()){
+	while (line.empty() && !std::cin.eof()){
 		std::cout << "[Darkest secret can't be empty]" << std::endl;
 		std::getline(std::cin, line);
 	}
 	contact.setSecret(line);
 	std::cout << std::endl;
 
-	if (this->nb_contact == 8) {
+	if (this->nb_contact == 8) {  // doit remplacer le oldest pas le index 7 --> jtexpluerias le probleme
+	// 	if (this->contactCount < 8)
+    // {
+    //     this->contacts[this->contactCount] = contact;
+    //     this->contactCount++;
+    // }
+    // else
+    // {
+    //     this->contacts[this->oldestIndex] = contact;
+    //     this->oldestIndex = (this->oldestIndex + 1) % 8; // le calcul se fait la 
+    // }
+		
 		for (int i = 0; i < 7; i++){
 			this->list[i] = this->list[i + 1];
 			this->list[i].setId(i);
@@ -126,6 +138,15 @@ void print_contact(Contact list[8], int nb) {
 	}
 }
 
+bool is_numeric(std::string string){
+	for (size_t i = 0; i < string.length(); i++) {
+		if (!isdigit(string[i])){
+			return (false);
+		}
+	}
+	return (true);
+}
+
 void PhoneBook::searchContact() {
 	std::string line;
 	int id;
@@ -139,7 +160,7 @@ void PhoneBook::searchContact() {
 	std::cout << "[Enter the ID of the contact you want to display]" << std::endl;
 	std::getline(std::cin, line);
 	id = atoi(line.c_str());
-	while (id < 0 || id > this->nb_contact || line.empty()) {
+	while ((id < 0 || id > this->nb_contact || line.empty() || !is_numeric(line)) && !std::cin.eof()) { // check sur str : test avec "l" qui print index 0 ????
 		std::cout << "[Enter a correct ID of the contact you want to display]" << std::endl;
 		std::getline(std::cin, line);
 		id = atoi(line.c_str());
