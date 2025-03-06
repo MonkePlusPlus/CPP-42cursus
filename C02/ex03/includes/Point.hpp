@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/06 19:05:32 by ptheo             #+#    #+#             */
-/*   Updated: 2025/03/06 21:22:51 by ptheo            ###   ########.fr       */
+/*   Created: 2025/03/06 18:28:56 by ptheo             #+#    #+#             */
+/*   Updated: 2025/03/06 19:01:29 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#pragma once
 
-int main(){
-	ClapTrap claptrap("Claptrap");
-	ClapTrap claptrap2("Claptrap2");
+#include "Fixed.hpp"
 
-	claptrap.attack("Jack");
-	claptrap.takeDamage(10);
-	claptrap.beRepaired(5);
+class Point
+{
+	private:
+		const Fixed _x;
+		const Fixed _y;
 
-	claptrap2.attack("Jack");
-	claptrap2.takeDamage(10);
-	claptrap2.beRepaired(5);
-
-	return (0);
-}
+	public:
+		Point();
+		Point(const float x, const float y);
+		Point(Point)
+};

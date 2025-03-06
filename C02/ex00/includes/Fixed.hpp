@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/06 19:05:32 by ptheo             #+#    #+#             */
-/*   Updated: 2025/03/06 21:22:51 by ptheo            ###   ########.fr       */
+/*   Created: 2025/03/06 16:45:21 by ptheo             #+#    #+#             */
+/*   Updated: 2025/03/06 17:12:44 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#pragma once
 
-int main(){
-	ClapTrap claptrap("Claptrap");
-	ClapTrap claptrap2("Claptrap2");
+#include <iostream>
+#include <string>
 
-	claptrap.attack("Jack");
-	claptrap.takeDamage(10);
-	claptrap.beRepaired(5);
+class Fixed
+{
+	private:
+		int _value;
+		static const int nb_bits = 8;
 
-	claptrap2.attack("Jack");
-	claptrap2.takeDamage(10);
-	claptrap2.beRepaired(5);
-
-	return (0);
-}
+	public:
+		Fixed();
+		Fixed(const Fixed &copy);
+		Fixed & operator=(const Fixed &copy);
+		~Fixed();
+		int getRawBits( void ) const;
+		void setRawBits( int const raw );
+};

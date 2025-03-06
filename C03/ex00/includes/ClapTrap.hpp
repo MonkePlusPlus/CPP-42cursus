@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/06 19:05:32 by ptheo             #+#    #+#             */
-/*   Updated: 2025/03/06 21:22:51 by ptheo            ###   ########.fr       */
+/*   Created: 2025/03/06 19:05:27 by ptheo             #+#    #+#             */
+/*   Updated: 2025/03/06 19:18:12 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#pragma once
 
-int main(){
-	ClapTrap claptrap("Claptrap");
-	ClapTrap claptrap2("Claptrap2");
+#include <iostream>
+#include <string>
 
-	claptrap.attack("Jack");
-	claptrap.takeDamage(10);
-	claptrap.beRepaired(5);
+typedef std::string str;
 
-	claptrap2.attack("Jack");
-	claptrap2.takeDamage(10);
-	claptrap2.beRepaired(5);
+class ClapTrap
+{
+	private:
+		str	_name;
+		int	_health;
+		int _energie;
+		int	_attack;
 
-	return (0);
-}
+	public:
+		ClapTrap();
+		ClapTrap(str name);
+		ClapTrap(const ClapTrap &other);
+		~ClapTrap();
+
+		void attack(const str& target);
+		void takeDamage(unsigned int amount);
+		void beRepaired(unsigned int amount);
+};

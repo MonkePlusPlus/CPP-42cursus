@@ -6,7 +6,7 @@
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 19:31:58 by ptheo             #+#    #+#             */
-/*   Updated: 2025/03/06 19:45:56 by ptheo            ###   ########.fr       */
+/*   Updated: 2025/03/06 21:26:08 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,8 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &other) {
 
 ScavTrap::~ScavTrap() {
 	std::cout << "ScavTrap " << this->_name << " is destroyed" << std::endl;
+}
+
+void ScavTrap::guardGate() {
+	std::cout << "ScavTrap " << this->_name << " is now in Gate Keeper mode" << std::endl;
 }
