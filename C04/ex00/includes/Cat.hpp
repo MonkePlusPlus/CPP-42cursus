@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/06 19:31:56 by ptheo             #+#    #+#             */
-/*   Updated: 2025/03/07 14:38:26 by ptheo            ###   ########.fr       */
+/*   Created: 2025/03/07 15:07:35 by ptheo             #+#    #+#             */
+/*   Updated: 2025/03/07 15:26:16 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "ClapTrap.hpp"
-#include <iostream>
-#include <string>
+#include "Animal.hpp"
 
-class ScavTrap : public ClapTrap
+class Cat : public Animal
 {
 	public:
-		ScavTrap();
-		ScavTrap(str name);
-		ScavTrap(const ScavTrap &other);
-		ScavTrap &operator=(const ScavTrap &other);
-		~ScavTrap();
+		Cat();
+		Cat(const Cat &other);
+		Cat &operator=(const Cat &other);
+		~Cat();
 
-		void	guardGate(void);
-		void	attack(const str &target);
-
-	private:
+		void makeSound(void) const;
 };

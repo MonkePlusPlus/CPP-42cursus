@@ -1,32 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/06 19:31:56 by ptheo             #+#    #+#             */
-/*   Updated: 2025/03/07 14:38:26 by ptheo            ###   ########.fr       */
+/*   Created: 2025/03/07 15:06:00 by ptheo             #+#    #+#             */
+/*   Updated: 2025/03/07 15:57:40 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
+#include "Brain.hpp"
 
-#include "ClapTrap.hpp"
-#include <iostream>
-#include <string>
-
-class ScavTrap : public ClapTrap
+int main()
 {
-	public:
-		ScavTrap();
-		ScavTrap(str name);
-		ScavTrap(const ScavTrap &other);
-		ScavTrap &operator=(const ScavTrap &other);
-		~ScavTrap();
-
-		void	guardGate(void);
-		void	attack(const str &target);
-
-	private:
-};
+	
+	return 0;
+}

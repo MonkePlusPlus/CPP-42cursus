@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/06 19:31:56 by ptheo             #+#    #+#             */
-/*   Updated: 2025/03/07 14:38:26 by ptheo            ###   ########.fr       */
+/*   Created: 2025/03/06 19:05:32 by ptheo             #+#    #+#             */
+/*   Updated: 2025/03/07 14:34:02 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-
 #include "ClapTrap.hpp"
-#include <iostream>
-#include <string>
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
-class ScavTrap : public ClapTrap
-{
-	public:
-		ScavTrap();
-		ScavTrap(str name);
-		ScavTrap(const ScavTrap &other);
-		ScavTrap &operator=(const ScavTrap &other);
-		~ScavTrap();
+int main(){
+	DiamondTrap diamondtrap = DiamondTrap("DiamondTrap");
+	DiamondTrap diamondtrap2 = DiamondTrap("DiamondTrap2");
 
-		void	guardGate(void);
-		void	attack(const str &target);
+	diamondtrap.attack("John");
+	diamondtrap.beRepaired(50);
+	diamondtrap.takeDamage(20);
+	diamondtrap.whoAmI();
 
-	private:
-};
+	return (0);
+}

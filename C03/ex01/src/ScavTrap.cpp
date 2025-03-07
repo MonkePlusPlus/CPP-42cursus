@@ -6,7 +6,7 @@
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 19:31:58 by ptheo             #+#    #+#             */
-/*   Updated: 2025/03/07 14:04:46 by ptheo            ###   ########.fr       */
+/*   Updated: 2025/03/07 14:44:30 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,12 @@ ScavTrap::~ScavTrap() {
 	std::cout << "ScavTrap " << this->_name << " is destroyed" << std::endl;
 }
 
-void ScavTrap::attack(str name) {
+void ScavTrap::attack(const str &target) {
 	if (this->_energie < 1) {
 		std::cout << this->_name << " doesn't have enought energie point to attack..." << std::endl;
 		return ;
 	}
-	std::cout << this->_name << " attacks " << name << " hard and does " << this->_attack << " of damage!" << std::endl; 
+	std::cout << this->_name << " attacks " << target << " hard and does " << this->_attack << " of damage!" << std::endl; 
 }
 
 void ScavTrap::guardGate() {

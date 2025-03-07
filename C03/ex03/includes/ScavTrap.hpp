@@ -6,7 +6,7 @@
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 19:31:56 by ptheo             #+#    #+#             */
-/*   Updated: 2025/03/07 14:38:26 by ptheo            ###   ########.fr       */
+/*   Updated: 2025/03/07 14:43:32 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <iostream>
 #include <string>
 
-class ScavTrap : public ClapTrap
+class ScavTrap : virtual public ClapTrap
 {
 	public:
 		ScavTrap();
@@ -26,7 +26,7 @@ class ScavTrap : public ClapTrap
 		~ScavTrap();
 
 		void	guardGate(void);
-		void	attack(const str &target);
+		void	attack(const str& target);
 
 	private:
 };

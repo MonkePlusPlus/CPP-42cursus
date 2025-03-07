@@ -6,7 +6,7 @@
 #    By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/03 21:10:14 by ptheo             #+#    #+#              #
-#    Updated: 2025/03/07 14:18:38 by ptheo            ###   ########.fr        #
+#    Updated: 2025/03/07 14:45:15 by ptheo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ FILES = main.cpp
 FILES += ClapTrap.cpp
 FILES += ScavTrap.cpp
 FILES += FragTrap.cpp
+FILES += DiamondTrap.cpp
 # END FILES
 
 SRC_FILES = $(addprefix $(SRC_DIR), $(FILES))
@@ -29,7 +30,7 @@ OBJ_FILES = $(patsubst $(SRC_DIR)%.cpp, $(BUILD_DIR)%.o, $(SRC_FILES))
 
 DEP_FILES = $(patsubst $(SRC_DIR)%.cpp, $(BUILD_DIR)%.d, $(SRC_FILES))
 
-NAME		:= fragtrap
+NAME		:= diamondtrap
 CXX			:= c++
 CXXFLAGS	:=  -gdwarf-4 -Wall -Wextra -Werror -I $(INCLUDES) -MMD -MP -std=c++98
 

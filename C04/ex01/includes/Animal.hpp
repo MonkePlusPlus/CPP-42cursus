@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/06 19:31:56 by ptheo             #+#    #+#             */
-/*   Updated: 2025/03/07 14:38:26 by ptheo            ###   ########.fr       */
+/*   Created: 2025/03/07 14:57:29 by ptheo             #+#    #+#             */
+/*   Updated: 2025/03/07 15:29:09 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "ClapTrap.hpp"
 #include <iostream>
 #include <string>
 
-class ScavTrap : public ClapTrap
+typedef std::string str;
+
+class Animal
 {
+	protected:
+		str	_type;
+
 	public:
-		ScavTrap();
-		ScavTrap(str name);
-		ScavTrap(const ScavTrap &other);
-		ScavTrap &operator=(const ScavTrap &other);
-		~ScavTrap();
+		Animal();
+		Animal(str type);
+		Animal(const Animal &other);
+		Animal &operator=(const Animal &other);
+		virtual ~Animal();
 
-		void	guardGate(void);
-		void	attack(const str &target);
+		str getType() const;
 
-	private:
+		virtual void makeSound(void) const;
 };
