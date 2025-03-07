@@ -1,38 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/06 19:05:27 by ptheo             #+#    #+#             */
-/*   Updated: 2025/03/07 14:00:05 by ptheo            ###   ########.fr       */
+/*   Created: 2025/03/07 14:00:36 by ptheo             #+#    #+#             */
+/*   Updated: 2025/03/07 14:02:33 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "ClapTrap.hpp"
 
-#include <iostream>
-#include <string>
-
-typedef std::string str;
-
-class ClapTrap
+class FragTrap : public ClapTrap
 {
-	protected:
-		str	_name;
-		int	_health;
-		int _energie;
-		int	_attack;
 
 	public:
-		ClapTrap();
-		ClapTrap(str name);
-		ClapTrap(const ClapTrap &other);
-		ClapTrap &operator=(const ClapTrap &other);
-		virtual ~ClapTrap();
+		FragTrap();
+		FragTrap(str name);
+		FragTrap(const FragTrap &other);
+		FragTrap &operator=(const FragTrap &other);
+		~FragTrap();
 
-		void attack(const str& target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
+		void	highFiveGuys(void);
+
+	private:
 };
