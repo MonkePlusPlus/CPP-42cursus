@@ -1,42 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/07 15:06:00 by ptheo             #+#    #+#             */
-/*   Updated: 2025/03/08 21:09:02 by theo             ###   ########.fr       */
+/*   Created: 2025/03/07 14:57:29 by ptheo             #+#    #+#             */
+/*   Updated: 2025/03/08 21:13:30 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Brain.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
+#pragma once
 
-int	main(void)
+#include <iostream>
+#include <string>
+
+typedef std::string str;
+
+class Animal
 {
-	Animal *animal[10];
+	protected:
+		str	_type;
+		Animal();
 
-	for (int i = 0; i < 10; i++)
-	{
-		if (i < 5)
-		{
-			animal[i] = new Dog();
-		}
-		else
-		{
-			animal[i] = new Cat();
-		}
-	}
-	for (int i = 0; i < 10; i++)
-	{
-		animal[i]->makeSound();
-	}
-	for (int i = 0; i < 10; i++)
-	{
-		delete animal[i];
-	}
-	return (0);
-}
+
+	public:
+		Animal(str type);
+		Animal(const Animal &other);
+		Animal &operator=(const Animal &other);
+		virtual ~Animal();
+		str getType() const;
+		virtual void makeSound(void) const;
+};

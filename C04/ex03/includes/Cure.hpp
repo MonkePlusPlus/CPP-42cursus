@@ -1,42 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/07 15:06:00 by ptheo             #+#    #+#             */
-/*   Updated: 2025/03/08 21:09:02 by theo             ###   ########.fr       */
+/*   Created: 2025/03/08 21:18:53 by theo              #+#    #+#             */
+/*   Updated: 2025/03/08 22:28:01 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Brain.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
+#pragma once
 
-int	main(void)
+#include <iostream>
+#include <string>
+
+#include "AMateria.hpp"
+
+class Cure : public AMateria
 {
-	Animal *animal[10];
+	public:
+		Cure();
+		Cure(const Cure &other);
+		Cure &operator=(const Cure &other);
+		Cure(std::string const & type);
+		~Cure();
+		
+		Cure* clone() const;
+		void use(ICharacter& target);
+};
 
-	for (int i = 0; i < 10; i++)
-	{
-		if (i < 5)
-		{
-			animal[i] = new Dog();
-		}
-		else
-		{
-			animal[i] = new Cat();
-		}
-	}
-	for (int i = 0; i < 10; i++)
-	{
-		animal[i]->makeSound();
-	}
-	for (int i = 0; i < 10; i++)
-	{
-		delete animal[i];
-	}
-	return (0);
-}

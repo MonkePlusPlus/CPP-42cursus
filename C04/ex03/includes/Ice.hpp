@@ -1,42 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/07 15:06:00 by ptheo             #+#    #+#             */
-/*   Updated: 2025/03/08 21:09:02 by theo             ###   ########.fr       */
+/*   Created: 2025/03/08 21:18:47 by theo              #+#    #+#             */
+/*   Updated: 2025/03/08 22:27:58 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Brain.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
+#pragma once
 
-int	main(void)
+#include <iostream>
+#include <string>
+
+#include "AMateria.hpp"
+
+class Ice : public AMateria
 {
-	Animal *animal[10];
-
-	for (int i = 0; i < 10; i++)
-	{
-		if (i < 5)
-		{
-			animal[i] = new Dog();
-		}
-		else
-		{
-			animal[i] = new Cat();
-		}
-	}
-	for (int i = 0; i < 10; i++)
-	{
-		animal[i]->makeSound();
-	}
-	for (int i = 0; i < 10; i++)
-	{
-		delete animal[i];
-	}
-	return (0);
-}
+	public:
+		Ice();
+		Ice(const Ice &other);
+		Ice &operator=(const Ice &other);
+		Ice(std::string const & type);
+		~Ice();
+		
+		Ice* clone() const;
+		void use(ICharacter& target);
+};
