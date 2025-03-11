@@ -6,7 +6,7 @@
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 17:39:47 by ptheo             #+#    #+#             */
-/*   Updated: 2025/03/04 22:58:22 by ptheo            ###   ########.fr       */
+/*   Updated: 2025/03/11 19:59:01 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,18 +61,7 @@ void PhoneBook::addContact() {
 	contact.setSecret(line);
 	std::cout << std::endl;
 
-	if (this->nb_contact == 8) {  // doit remplacer le oldest pas le index 7 --> jtexpluerias le probleme
-	// 	if (this->contactCount < 8)
-    // {
-    //     this->contacts[this->contactCount] = contact;
-    //     this->contactCount++;
-    // }
-    // else
-    // {
-    //     this->contacts[this->oldestIndex] = contact;
-    //     this->oldestIndex = (this->oldestIndex + 1) % 8; // le calcul se fait la 
-    // }
-		
+	if (this->nb_contact == 8) { 
 		for (int i = 0; i < 7; i++){
 			this->list[i] = this->list[i + 1];
 			this->list[i].setId(i);
@@ -160,7 +149,7 @@ void PhoneBook::searchContact() {
 	std::cout << "[Enter the ID of the contact you want to display]" << std::endl;
 	std::getline(std::cin, line);
 	id = atoi(line.c_str());
-	while ((id < 0 || id > this->nb_contact || line.empty() || !is_numeric(line)) && !std::cin.eof()) { // check sur str : test avec "l" qui print index 0 ????
+	while ((id < 0 || id >= this->nb_contact || line.empty() || !is_numeric(line)) && !std::cin.eof()) {
 		std::cout << "[Enter a correct ID of the contact you want to display]" << std::endl;
 		std::getline(std::cin, line);
 		id = atoi(line.c_str());

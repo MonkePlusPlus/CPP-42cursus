@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: theo <theo@student.42.fr>                  +#+  +:+       +#+         #
+#    By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/03 21:10:14 by ptheo             #+#    #+#              #
-#    Updated: 2025/03/08 22:42:35 by theo             ###   ########.fr        #
+#    Updated: 2025/03/11 20:02:43 by ptheo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ DEP_FILES = $(patsubst $(SRC_DIR)%.cpp, $(BUILD_DIR)%.d, $(SRC_FILES))
 
 NAME		:= materia
 CXX			:= c++
-CXXFLAGS	:=  -gdwarf-4 -Wall -Wextra -Werror -I $(INCLUDES) -MMD -MP -std=c++98
+CXXFLAGS	:=   -Wall -Wextra -Werror -I $(INCLUDES)  -std=c++98
 
 MKDIR	:= mkdir -p
 RM_RF	:= rm -rf

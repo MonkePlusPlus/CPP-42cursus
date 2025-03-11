@@ -6,7 +6,7 @@
 #    By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/03 21:10:14 by ptheo             #+#    #+#              #
-#    Updated: 2025/03/07 13:32:09 by ptheo            ###   ########.fr        #
+#    Updated: 2025/03/11 20:02:43 by ptheo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ DEP_FILES = $(patsubst $(SRC_DIR)%.cpp, $(BUILD_DIR)%.d, $(SRC_FILES))
 
 NAME		:= scavtrap
 CXX			:= c++
-CXXFLAGS	:=  -gdwarf-4 -Wall -Wextra -Werror -I $(INCLUDES) -MMD -MP -std=c++98
+CXXFLAGS	:=   -Wall -Wextra -Werror -I $(INCLUDES)  -std=c++98
 
 MKDIR	:= mkdir -p
 RM_RF	:= rm -rf

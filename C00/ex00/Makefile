@@ -6,7 +6,7 @@
 #    By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/03 16:12:05 by ptheo             #+#    #+#              #
-#    Updated: 2025/03/03 16:57:56 by ptheo            ###   ########.fr        #
+#    Updated: 2025/03/11 19:54:58 by ptheo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ DEP_FILES = $(patsubst $(SRC_DIR)%.cpp, $(BUILD_DIR)%.d, $(SRC_FILES))
 
 NAME		:= megaphone
 CXX			:= c++
-CXXFLAGS	:=  -gdwarf-4 -Wall -Wextra -Werror -I $(INCLUDES) -MMD -MP -std=c++98
+CXXFLAGS	:=  -Wall -Wextra -Werror -I $(INCLUDES) -std=c++98
 
 MKDIR	:= mkdir -p
 RM_RF	:= rm -rf
