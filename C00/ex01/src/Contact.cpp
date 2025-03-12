@@ -6,7 +6,7 @@
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 17:39:49 by ptheo             #+#    #+#             */
-/*   Updated: 2025/03/12 11:52:14 by ptheo            ###   ########.fr       */
+/*   Updated: 2025/03/12 11:55:48 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@
 #include "Contact.hpp"
 
 Contact::Contact(){}
+
+int Contact::getId() {
+	return this->id;
+}
 
 std::string Contact::getFirstName() {
 	return this->first_name;

@@ -6,7 +6,7 @@
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 17:39:52 by ptheo             #+#    #+#             */
-/*   Updated: 2025/03/12 11:50:58 by ptheo            ###   ########.fr       */
+/*   Updated: 2025/03/12 11:55:30 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ class Contact
 {
 	public:
 		Contact();
-		int getId() {return this->id;}
+		int getId();
 		std::string getFirstName();
 		std::string getLastName();
 		std::string getNickname();
