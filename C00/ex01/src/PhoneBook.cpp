@@ -6,7 +6,7 @@
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 17:39:47 by ptheo             #+#    #+#             */
-/*   Updated: 2025/03/11 19:59:01 by ptheo            ###   ########.fr       */
+/*   Updated: 2025/03/12 11:51:03 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,15 @@ void PhoneBook::addContact() {
 	contact.setNname(line);
 	std::cout << std::endl;
 
+	std::cout << "[Enter the phone number of the contact]" << std::endl;
+	std::getline(std::cin, line);
+	while (line.empty() && !std::cin.eof()){
+		std::cout << "[Phone number can't be empty]" << std::endl;
+		std::getline(std::cin, line);
+	}
+	contact.setPhone(line);
+	std::cout << std::endl;
+
 	std::cout << "[Enter the darkest secret of the contact]" << std::endl;
 	std::getline(std::cin, line);
 	while (line.empty() && !std::cin.eof()){
@@ -82,6 +91,7 @@ void display_contact(Contact contact){
 	std::cout << "Fist Name : " << contact.getFirstName() << std::endl;
 	std::cout << "Last Name : " << contact.getLastName() << std::endl;
 	std::cout << "Nickname : " << contact.getNickname() << std::endl;
+	std::cout << "Phone Number : " << contact.getPhone() << std::endl;
 	std::cout << "Darkest Secret : " << contact.getSecret() << std::endl;
 	std::cout << std::endl;
 }
