@@ -6,7 +6,7 @@
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 23:09:22 by ptheo             #+#    #+#             */
-/*   Updated: 2025/03/05 00:12:35 by ptheo            ###   ########.fr       */
+/*   Updated: 2025/03/14 19:06:34 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void Harl::complain(str level){
 	dico["ERROR"] = &Harl::error;
 
 	if (dico.find(level) == dico.end()){
-		std::cout << "Mauvais level" << std::endl;
+		std::cout << "Wrong level" << std::endl;
 		return ;
 	}
 	(this->*dico[level])();

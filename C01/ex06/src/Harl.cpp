@@ -6,7 +6,7 @@
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 23:09:22 by ptheo             #+#    #+#             */
-/*   Updated: 2025/03/05 00:29:27 by ptheo            ###   ########.fr       */
+/*   Updated: 2025/03/14 19:09:04 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void Harl::complain(str level){
 		case 2: std::cout << "[ INFO ]" << std::endl; info(); std::cout << std::endl;
 		case 3: std::cout << "[ WARNING ]" << std::endl; warning(); std::cout << std::endl;
 		case 4: std::cout << "[ ERROR ]" << std::endl; error(); std::cout << std::endl; break ;
-		default: std::cout << "Complaining default" << std::endl; break ;
+		default: std::cout << "[ Probably complaining about insignificant problems ]" << std::endl; break ;
 	}
 }
 

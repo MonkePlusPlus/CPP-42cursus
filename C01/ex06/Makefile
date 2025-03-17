@@ -6,7 +6,7 @@
 #    By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/03 21:10:14 by ptheo             #+#    #+#              #
-#    Updated: 2025/03/11 20:02:43 by ptheo            ###   ########.fr        #
+#    Updated: 2025/03/12 20:54:05 by ptheo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,7 @@ NC		:= \e[0m
 $(BUILD_DIR)%.o : $(SRC_DIR)%.cpp
 	@$(MKDIR) $(dir $@)
 	@$(ECHO) "$(BLUE)[CMP] Compiling $<...$(NC)"
-	@$(CXX) -c $(CXXFLAGS) $< -o $@
+	@$(CXX) $(CXXFLAGS) -c $< -o $@
 
 # This is to add the .d files as dependencies for linking
 -include $(DEP_FILES)
