@@ -6,7 +6,7 @@
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 19:05:27 by ptheo             #+#    #+#             */
-/*   Updated: 2025/03/06 19:18:12 by ptheo            ###   ########.fr       */
+/*   Updated: 2025/03/18 21:58:28 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class ClapTrap
 {
 	private:
 		str	_name;
-		int	_health;
+		int	_hitpoint;
 		int _energie;
 		int	_attack;
 

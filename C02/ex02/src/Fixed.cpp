@@ -6,7 +6,7 @@
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 16:45:19 by ptheo             #+#    #+#             */
-/*   Updated: 2025/03/06 18:24:12 by ptheo            ###   ########.fr       */
+/*   Updated: 2025/03/18 17:06:17 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,19 +100,13 @@ Fixed	Fixed::operator-(const Fixed &other) {
 }
 
 Fixed	Fixed::operator*(const Fixed &other) {
-	Fixed f = Fixed();
-	long long i = this->_value * other._value;
-	i = i >> Fixed::bits;
-	f.setRawBits(i);
-	return (f);
+	float i = this->toFloat() * other.toFloat();
+	return (Fixed(i));
 }
 
 Fixed	Fixed::operator/(const Fixed &other) {
-	Fixed f = Fixed();
-	long long i = this->_value / other._value;
-	i = i << Fixed::bits;
-	f.setRawBits(i);
-	return (f);
+	float i = this->toFloat() / other.toFloat();
+	return (Fixed(i));
 }
 
 Fixed	Fixed::operator++(int) {

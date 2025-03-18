@@ -6,7 +6,7 @@
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 19:05:32 by ptheo             #+#    #+#             */
-/*   Updated: 2025/03/07 14:34:02 by ptheo            ###   ########.fr       */
+/*   Updated: 2025/03/18 22:36:58 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int main(){
 	diamondtrap.beRepaired(50);
 	diamondtrap.takeDamage(20);
 	diamondtrap.whoAmI();
+	diamondtrap.guardGate();
+	diamondtrap.highFiveGuys();
 
 	return (0);
 }

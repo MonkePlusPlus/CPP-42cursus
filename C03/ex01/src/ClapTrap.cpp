@@ -6,21 +6,21 @@
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 19:05:30 by ptheo             #+#    #+#             */
-/*   Updated: 2025/03/07 13:55:43 by ptheo            ###   ########.fr       */
+/*   Updated: 2025/03/18 22:13:04 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(): _name("NoName"), _health(10), _energie(10), _attack(0) {
+ClapTrap::ClapTrap(): _name("NoName"), _hitpoint(10), _energie(10), _attack(0) {
 	std::cout << "ClapTrap without name created" << std::endl;
 }
 
-ClapTrap::ClapTrap(str name): _name(name), _health(10), _energie(10), _attack(0) {
+ClapTrap::ClapTrap(str name): _name(name), _hitpoint(10), _energie(10), _attack(0) {
 	std::cout << "ClapTrap " << name << " created" << std::endl;
 }
 
-ClapTrap::ClapTrap(const ClapTrap &other): _name(other._name), _health(other._health),
+ClapTrap::ClapTrap(const ClapTrap &other): _name(other._name), _hitpoint(other._hitpoint),
 										   _energie(other._energie), _attack(other._attack)  {
 	std::cout << "Copy of " << other._name << std::endl;
 }
@@ -30,7 +30,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &other) {
 		this->_name = other._name;
 		this->_attack = other._attack;
 		this->_energie = other._energie;
-		this->_health = other._health;
+		this->_hitpoint = other._hitpoint;
 	}
 	return (*this);
 }
@@ -40,6 +40,12 @@ ClapTrap::~ClapTrap() {
 }
 
 void ClapTrap::attack(const str& target) {
+	if (this->_hitpoint < 1)
+	{
+		std::cout << this->_name << " can't because it's dead..." << std::endl;
+		return ;
+	}
+	
 	if (this->_energie < 1) { 
 		std::cout << this->_name << " doesn't have enought energie point to attack..." << std::endl;
 		return ;
@@ -49,23 +55,36 @@ void ClapTrap::attack(const str& target) {
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
-	if (this->_health - amount <= 0) {
+	if (this->_hitpoint < 1)
+	{
+		std::cout << this->_name << " is already dead..." << std::endl;
+		return ;
+	}
+
+	if (this->_hitpoint - amount <= 0) {
 		std::cout << "ClapTrap " << this->_name << " takes " << amount << " of damage and die!" << std::endl;
-		this->_health = 0;
+		this->_hitpoint = 0;
 		return ;
 	}
 	std::cout << this->_name << " takes " << amount << " of damage!";
-	std::cout << " His health comes from " << this->_health << " to " << this->_health - amount  << std::endl;
-	this->_health -= amount;
+	std::cout << " His health comes from " << this->_hitpoint << " to " << this->_hitpoint - amount  << std::endl;
+	this->_hitpoint -= amount;
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
+
+	if (this->_hitpoint < 1)
+	{
+		std::cout << this->_name << " can't because it's dead..." << std::endl;
+		return ;
+	}
+	
 	if (this->_energie < 1) {
 		std::cout << this->_name << " doesn't have enought energie point to repair..." << std::endl;
 		return ;
 	}
 	std::cout << this->_name << " repaired " << amount << " of damage!";
-	std::cout << " His health comes from " << this->_health << " to " << this->_health + amount  << std::endl;
-	this->_health += amount;
+	std::cout << " His health comes from " << this->_hitpoint << " to " << this->_hitpoint + amount  << std::endl;
+	this->_hitpoint += amount;
 	this->_energie--;
 }

@@ -6,22 +6,22 @@
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 16:45:19 by ptheo             #+#    #+#             */
-/*   Updated: 2025/03/06 18:59:44 by ptheo            ###   ########.fr       */
+/*   Updated: 2025/03/18 17:37:44 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
 Fixed::Fixed(): _value(0) {
-	std::cout << "Default constructor called" << std::endl;
+	//std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed &copy): _value(copy._value) {
-	std::cout << "Copy constructor called" << std::endl;
+	//std::cout << "Copy constructor called" << std::endl;
 }
 
-Fixed & Fixed::operator=(const Fixed &copy) {
-	std::cout << "Copy assignment operator called" << std::endl;
+Fixed &Fixed::operator=(const Fixed &copy) {
+	//std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &copy) {
 		this->_value = copy.getRawBits();
 	}
@@ -29,19 +29,19 @@ Fixed & Fixed::operator=(const Fixed &copy) {
 }
 
 Fixed::Fixed(const int i): _value(i << Fixed::bits) {
-	std::cout << "Int constructor called" << std::endl;
+	//std::cout << "Int constructor called" << std::endl;
 }
 
 Fixed::Fixed(const float f): _value(roundf((float)f * (1 << Fixed::bits))) {
-	std::cout << "Float constructor called" << std::endl;
+	//std::cout << "Float constructor called" << std::endl;
 }
 
 Fixed::~Fixed() {
-	std::cout << "Destrutor called" << std::endl;
+	//std::cout << "Destrutor called" << std::endl;
 }
 
 int Fixed::getRawBits( void ) const {
-	std::cout << "getRawBits member function called" << std::endl;
+	//std::cout << "getRawBits member function called" << std::endl;
 	return (_value);
 }
 
@@ -100,19 +100,13 @@ Fixed	Fixed::operator-(const Fixed &other) {
 }
 
 Fixed	Fixed::operator*(const Fixed &other) {
-	Fixed f = Fixed();
-	long long i = this->_value * other._value;
-	i = i >> Fixed::bits;
-	f.setRawBits(i);
-	return (f);
+	float i = this->toFloat() * other.toFloat();
+	return (Fixed(i));
 }
 
 Fixed	Fixed::operator/(const Fixed &other) {
-	Fixed f = Fixed();
-	long long i = this->_value / other._value;
-	i = i << Fixed::bits;
-	f.setRawBits(i);
-	return (f);
+	float i = this->toFloat() / other.toFloat();
+	return (Fixed(i));
 }
 
 Fixed	Fixed::operator++(int) {
