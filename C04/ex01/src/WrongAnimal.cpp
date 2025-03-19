@@ -6,7 +6,7 @@
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 15:22:47 by ptheo             #+#    #+#             */
-/*   Updated: 2025/03/07 15:29:57 by ptheo            ###   ########.fr       */
+/*   Updated: 2025/03/19 15:25:02 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,6 @@ str WrongAnimal::getType() const {
 	return (this->_type);
 }
 
-void WrongAnimal::makeSound(void) {
+void WrongAnimal::makeSound(void) const {
 	std::cout << "**no sound**" << std::endl;
 }

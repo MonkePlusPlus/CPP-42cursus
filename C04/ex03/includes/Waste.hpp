@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Waste.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/07 15:05:21 by ptheo             #+#    #+#             */
-/*   Updated: 2025/03/19 15:24:55 by ptheo            ###   ########.fr       */
+/*   Created: 2025/03/19 15:34:24 by ptheo             #+#    #+#             */
+/*   Updated: 2025/03/19 15:53:21 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,25 @@
 
 #include <iostream>
 #include <string>
+#include "AMateria.hpp"
 
-typedef std::string str;
+class AMateria;
 
-class WrongAnimal
+struct Node {
+    AMateria *data;  
+    Node* next; 
+};
+
+class Waste
 {
-	protected:
-		str	_type;
-
 	public:
-		WrongAnimal();
-		WrongAnimal(str type);
-		WrongAnimal(const WrongAnimal &other);
-		WrongAnimal &operator=(const WrongAnimal &other);
-		virtual ~WrongAnimal();
+		Waste();
+		~Waste();
+		Waste(const Waste &other);
+		Waste	&operator=(const Waste &other);
+		void	freeWaste();
+		void	addWaste(AMateria *waste);
 
-		str getType() const;
-
-		virtual void makeSound(void) const;
+	private:
+		Node *head;
 };

@@ -6,7 +6,7 @@
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 14:22:13 by ptheo             #+#    #+#             */
-/*   Updated: 2025/03/18 22:34:38 by ptheo            ###   ########.fr       */
+/*   Updated: 2025/03/19 16:35:14 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,5 @@ DiamondTrap::~DiamondTrap() {
 }
 
 void DiamondTrap::whoAmI() {
-	std::cout << "DiamondTrap " << this->_name << " don't know who it is" << std::endl;
+	std::cout << "DiamondTrap " << this->_name << " don't know who it is maybe " << ClapTrap::_name << std::endl;
 }

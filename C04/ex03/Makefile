@@ -6,7 +6,7 @@
 #    By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/03 21:10:14 by ptheo             #+#    #+#              #
-#    Updated: 2025/03/11 20:02:43 by ptheo            ###   ########.fr        #
+#    Updated: 2025/03/19 16:01:28 by ptheo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ FILES += AMateria.cpp
 FILES += MateriaSource.cpp
 FILES += Ice.cpp
 FILES += Cure.cpp
+FILES += Waste.cpp
 # END FILES
 
 SRC_FILES = $(addprefix $(SRC_DIR), $(FILES))

@@ -6,7 +6,7 @@
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 15:05:21 by ptheo             #+#    #+#             */
-/*   Updated: 2025/03/07 15:24:09 by ptheo            ###   ########.fr       */
+/*   Updated: 2025/03/19 15:26:29 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,5 @@ class WrongAnimal
 
 		str getType() const;
 
-		virtual void makeSound(void);
+		virtual void makeSound(void) const;
 };
