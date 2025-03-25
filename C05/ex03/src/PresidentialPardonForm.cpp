@@ -6,7 +6,7 @@
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 18:07:28 by ptheo             #+#    #+#             */
-/*   Updated: 2025/03/25 16:51:00 by ptheo            ###   ########.fr       */
+/*   Updated: 2025/03/24 19:00:03 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &cop
 
 PresidentialPardonForm	&PresidentialPardonForm::operator=(const PresidentialPardonForm &copy) {
 	if (this != &copy) {
-		*this = copy;
+
 	}
 	return (*this);
 }

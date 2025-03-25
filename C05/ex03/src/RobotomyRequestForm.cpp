@@ -6,7 +6,7 @@
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 18:05:55 by ptheo             #+#    #+#             */
-/*   Updated: 2025/03/25 16:50:35 by ptheo            ###   ########.fr       */
+/*   Updated: 2025/03/25 16:23:10 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy): AForm
 
 RobotomyRequestForm	&RobotomyRequestForm::operator=(const RobotomyRequestForm &copy) {
 	if (this != &copy) {
-		*this = copy;
+
 	}
 	return (*this);
 }

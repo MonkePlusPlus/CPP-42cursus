@@ -6,7 +6,7 @@
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 18:04:32 by ptheo             #+#    #+#             */
-/*   Updated: 2025/03/25 16:54:08 by ptheo            ###   ########.fr       */
+/*   Updated: 2025/03/25 16:54:43 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &copy):
 
 ShrubberyCreationForm	&ShrubberyCreationForm::operator=(const ShrubberyCreationForm &copy) {
 	if (this != &copy) {
-		*this = copy;
 	}
 	return (*this);
 }
@@ -46,6 +45,6 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
 	std::ofstream file (((std::string)this->_target).insert(this->_target.length(), "_shrubbery").c_str());
 	if (!file.is_open() || file.fail())
 		return ;
-	file << ASCII_TREE;\
+	file << ASCII_TREE;
 	file.close();
 }

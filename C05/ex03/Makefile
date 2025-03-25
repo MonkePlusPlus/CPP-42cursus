@@ -6,7 +6,7 @@
 #    By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/03 21:10:14 by ptheo             #+#    #+#              #
-#    Updated: 2025/03/19 16:01:28 by ptheo            ###   ########.fr        #
+#    Updated: 2025/03/25 16:44:59 by ptheo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,12 +18,12 @@ INCLUDES = ./includes/
 
 # ALL FILES
 FILES = main.cpp
-FILES += Character.cpp
-FILES += AMateria.cpp
-FILES += MateriaSource.cpp
-FILES += Ice.cpp
-FILES += Cure.cpp
-FILES += Waste.cpp
+FILES += Bureaucrat.cpp
+FILES += AForm.cpp
+FILES += ShrubberyCreationForm.cpp
+FILES += RobotomyRequestForm.cpp
+FILES += PresidentialPardonForm.cpp
+FILES += Intern.cpp
 # END FILES
 
 SRC_FILES = $(addprefix $(SRC_DIR), $(FILES))
@@ -32,7 +32,7 @@ OBJ_FILES = $(patsubst $(SRC_DIR)%.cpp, $(BUILD_DIR)%.o, $(SRC_FILES))
 
 DEP_FILES = $(patsubst $(SRC_DIR)%.cpp, $(BUILD_DIR)%.d, $(SRC_FILES))
 
-NAME		:= materia
+NAME		:= ex03
 CXX			:= c++
 CXXFLAGS	:=   -Wall -Wextra -Werror -I $(INCLUDES)  -std=c++98
 

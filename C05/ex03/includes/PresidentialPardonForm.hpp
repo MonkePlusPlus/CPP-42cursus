@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/24 18:00:40 by ptheo             #+#    #+#             */
-/*   Updated: 2025/03/25 16:14:28 by ptheo            ###   ########.fr       */
+/*   Created: 2025/03/24 18:06:16 by ptheo             #+#    #+#             */
+/*   Updated: 2025/03/24 18:42:51 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include "AForm.hpp"
-#include <fstream>
-#include <iostream>
-#include <string>
 
-# define ASCII_TREE "      /\\ \n     /\\*\\ \n    /\\O\\*\\ \n   /*/\\/\\/\\ \n  /\\O\\/\\*\\/\\ \n /\\*\\/\\*\\/\\/\\ \n/\\O\\/\\/*/\\/O/\\ \n      ||\n      ||\n      ||\n"
-
-class ShrubberyCreationForm: public AForm
+class PresidentialPardonForm: public AForm
 {
 	public:
-		ShrubberyCreationForm(void);
-		ShrubberyCreationForm(std::string target);
-		ShrubberyCreationForm(const ShrubberyCreationForm &copy);
-		ShrubberyCreationForm	&operator=(const ShrubberyCreationForm &copy);
-		~ShrubberyCreationForm();
+		PresidentialPardonForm(void);
+		PresidentialPardonForm(std::string target);
+		PresidentialPardonForm(const PresidentialPardonForm &copy);
+		PresidentialPardonForm	&operator=(const PresidentialPardonForm &copy);
+		~PresidentialPardonForm();
 
 		void execute(Bureaucrat const & executor) const;
 

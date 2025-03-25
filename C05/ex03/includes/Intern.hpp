@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/24 16:13:42 by ptheo             #+#    #+#             */
-/*   Updated: 2025/03/25 16:48:22 by ptheo            ###   ########.fr       */
+/*   Created: 2025/03/25 16:24:08 by ptheo             #+#    #+#             */
+/*   Updated: 2025/03/25 17:00:13 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
-#include "Form.hpp"
+#pragma once
 
-int		main(void) 
+#include "AForm.hpp"
+
+class Intern
 {
-	Bureaucrat b1 = Bureaucrat("Bob", 150);
-	Bureaucrat b2 = Bureaucrat("Jack", 1);
+	public:
+		Intern(void);
+		Intern(const Intern &copy);
+		Intern	&operator=(const Intern &copy);
+		~Intern();
 
-	Form f1 = Form("testForm", 50, 50);
+		AForm *makeForm(std::string name, std::string target);
 
-	b1.signForm(f1);
-	b2.signForm(f1);
-	b2.signForm(f1);
-
-	try {
-		Form f2 = Form("cantForm", 151, 0);
-	} catch (std::exception &e) {
-		std::cout << e.what() << std::endl;
-	}
-
-	return (0);
-}
+		class InvalidFormException: public std::exception {
+			virtual const char *what() const throw();
+		};
+};
