@@ -89,5 +89,6 @@ void AForm::execute(Bureaucrat const & executor) const {
 
 std::ostream&	operator<<(std::ostream& os, AForm const& form) {
 	os << form.getName() << " is signed : " << form.getSigned();
+	os << " requiered to sign : " << form.getToSign() << " requiered to execute : " << form.getToExec();
 	return (os);
 }

@@ -6,7 +6,7 @@
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 17:06:15 by ptheo             #+#    #+#             */
-/*   Updated: 2025/03/24 17:50:36 by ptheo            ###   ########.fr       */
+/*   Updated: 2025/03/25 17:12:59 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +79,6 @@ void	Form::beSigned(Bureaucrat &bur) {
 
 std::ostream&	operator<<(std::ostream& os, Form const& form) {
 	os << form.getName() << " is signed : " << form.getSigned();
+	os << " requiered to sign : " << form.getToSign() << " requiered to execute : " << form.getToExec(); 
 	return (os);
 }
