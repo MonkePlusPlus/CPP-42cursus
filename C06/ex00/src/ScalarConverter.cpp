@@ -6,7 +6,7 @@
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 15:23:18 by ptheo             #+#    #+#             */
-/*   Updated: 2025/03/28 18:46:33 by ptheo            ###   ########.fr       */
+/*   Updated: 2025/03/29 19:28:41 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ bool	isFloat(std::string str) {
 	i++;
 	while (std::isdigit(str[i]))
 		i++;
-	if (str[i] != 'f' || str.length() != i + 1)
+	if (!(str[i] == 'f' || str[i] == 'F') || str.length() != i + 1)
 		return false;
 
 	double	nb = atof(str.c_str());
@@ -93,7 +93,7 @@ bool	isDouble(std::string str) {
 
 void	convertChar(char c) {
 	if (std::isprint(c)) {
-		std::cout << "char: " << c << std::endl;
+		std::cout << "char: '" << c << "'" << std::endl;
 	} else {
 		std::cout << "char: Non displayable" << std::endl;
 	}
@@ -105,7 +105,7 @@ void	convertChar(char c) {
 void	convertInt(int i) {
 	if (std::isprint(i) && i <= std::numeric_limits<char>::max() 
 	&& i >= std::numeric_limits<char>::min()) {
-		std::cout << "char: " << static_cast<char>((char)i) << std::endl;
+		std::cout << "char: '" << static_cast<char>((char)i) << "'" << std::endl;
 	} else {
 		std::cout << "char: Non displayable" << std::endl;
 	}
@@ -115,9 +115,9 @@ void	convertInt(int i) {
 }
 
 void	convertFloat(float f) {
-	if (std::isprint(static_cast<char>(f) && f <= std::numeric_limits<char>::max() 
-	&& f >= std::numeric_limits<char>::min())) {
-		std::cout << "char: " << static_cast<char>(f) << std::endl;
+	if (std::isprint(static_cast<char>(f)) && f <= std::numeric_limits<char>::max() 
+	&& f >= std::numeric_limits<char>::min()) {
+		std::cout << "char: '" << static_cast<char>(f) << "'" << std::endl;
 	} else {
 		std::cout << "char: Non displayable" << std::endl;
 	}
@@ -127,9 +127,9 @@ void	convertFloat(float f) {
 }
 
 void	convertDouble(double d) {
-	if (std::isprint(static_cast<char>(d) && d <= std::numeric_limits<char>::max() 
-	&& d >= std::numeric_limits<char>::min())) {
-		std::cout << "char: " << static_cast<char>(d) << std::endl;
+	if (std::isprint(static_cast<char>(d)) && d <= std::numeric_limits<char>::max() 
+	&& d >= std::numeric_limits<char>::min()) {
+		std::cout << "char: '" << static_cast<char>(d) << "'" << std::endl;
 	} else {
 		std::cout << "char: Non displayable" << std::endl;
 	}
