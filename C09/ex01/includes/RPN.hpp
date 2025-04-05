@@ -1,30 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   RPN.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/04 17:54:40 by theo              #+#    #+#             */
-/*   Updated: 2025/04/05 20:56:33 by ptheo            ###   ########.fr       */
+/*   Created: 2025/04/05 20:58:16 by ptheo             #+#    #+#             */
+/*   Updated: 2025/04/05 22:20:37 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "BitcoinExchange.hpp"
+#pragma once
 
-int	main(int ac, char *av[])
+#include <algorithm>
+#include <iostream>
+#include <string>
+#include <stack>
+#include <fstream>
+
+typedef std::string str;
+
+class RPN
 {
-	if (ac != 2) {
-		std::cout << "Error: number of argument" << std::endl;
-		return (1);
-	}
-	BitcoinExchange bitcoinExchange = BitcoinExchange();
+	private:
+		std::stack<int> _vstack;
+	
+	public:
+		RPN();
+		RPN(const RPN &copy);
+		RPN	&operator=(const RPN &copy);
+		~RPN();
 
-	try {
-		bitcoinExchange.createDatabase("./cpp_09/data.csv");
-		bitcoinExchange.exchangePrice(av[1]);
-	} catch (std::exception &e) {
-		std::cout << e.what() << std::endl;
-	}
-	return (0);
-}
+		void	printStack();
+
+		void 	evaluateExpression(str line);
+		void	calculate(char c);
+};

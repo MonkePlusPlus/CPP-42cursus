@@ -5,26 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/04 17:54:40 by theo              #+#    #+#             */
-/*   Updated: 2025/04/05 20:56:33 by ptheo            ###   ########.fr       */
+/*   Created: 2025/04/05 20:58:25 by ptheo             #+#    #+#             */
+/*   Updated: 2025/04/05 22:20:10 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "BitcoinExchange.hpp"
+#include "RPN.hpp"
 
 int	main(int ac, char *av[])
 {
 	if (ac != 2) {
-		std::cout << "Error: number of argument" << std::endl;
+		std::cout << "Error" << std::endl;
 		return (1);
 	}
-	BitcoinExchange bitcoinExchange = BitcoinExchange();
+	RPN rpn;
 
-	try {
-		bitcoinExchange.createDatabase("./cpp_09/data.csv");
-		bitcoinExchange.exchangePrice(av[1]);
-	} catch (std::exception &e) {
-		std::cout << e.what() << std::endl;
-	}
+	//rpn.printStack();
+	rpn.evaluateExpression(av[1]);
 	return (0);
 }

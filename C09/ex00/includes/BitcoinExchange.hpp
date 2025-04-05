@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 17:49:32 by theo              #+#    #+#             */
-/*   Updated: 2025/04/04 18:21:04 by theo             ###   ########.fr       */
+/*   Updated: 2025/04/05 20:54:37 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,15 @@
 
 typedef std::string str;
 
+typedef struct s_date
+{
+	int	year;
+	int month;
+	int day;
+}			t_date;
+
+typedef std::map<str, double>::iterator	base_iterator;
+
 class BitcoinExchange
 {
 	private:
@@ -31,5 +40,14 @@ class BitcoinExchange
 		BitcoinExchange	&operator=(const BitcoinExchange &copy);
 		~BitcoinExchange();
 
-		void	createDataBase(str path);
+		void	exchangePrice(str path);
+
+		void	createDatabase(str path);
+		void	printDatabase();
+
+		bool	checkDateValidity(str data);
+		bool	checkValueValidity(str value);
+
+		base_iterator findExchangeRate(str date);
+		bool compareDate(t_date date, base_iterator it1, base_iterator it2);
 };
