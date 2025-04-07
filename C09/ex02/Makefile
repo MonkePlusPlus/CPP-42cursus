@@ -6,7 +6,7 @@
 #    By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/03 21:10:14 by ptheo             #+#    #+#              #
-#    Updated: 2025/04/07 16:15:08 by ptheo            ###   ########.fr        #
+#    Updated: 2025/04/07 18:24:27 by ptheo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ INCLUDES = ./includes/
 
 # ALL FILES
 FILES = main.cpp
-FILES += RPN.cpp
+FILES += PmergeMe.cpp
 # END FILES
 
 SRC_FILES = $(addprefix $(SRC_DIR), $(FILES))
@@ -27,7 +27,7 @@ OBJ_FILES = $(patsubst $(SRC_DIR)%.cpp, $(BUILD_DIR)%.o, $(SRC_FILES))
 
 DEP_FILES = $(patsubst $(SRC_DIR)%.cpp, $(BUILD_DIR)%.d, $(SRC_FILES))
 
-NAME		:= RPN
+NAME		:= PmergeMe
 CXX			:= c++
 CXXFLAGS	:=   -Wall -Wextra -Werror -I $(INCLUDES)  -std=c++98
 
