@@ -6,7 +6,7 @@
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 17:49:23 by theo              #+#    #+#             */
-/*   Updated: 2025/04/05 20:56:18 by ptheo            ###   ########.fr       */
+/*   Updated: 2025/04/15 17:20:06 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,10 @@ void	BitcoinExchange::createDatabase(str path) {
 		if (line.find(",") == line.npos)
 			throw std::invalid_argument("Error: database is not in form date,exchange");
 		str date = line.substr(0, line.find(","));
-		if (!checkDateValidity(date))
+		str value = line.substr(line.find(",") + 1, line.length());
+		if (!checkDateValidity(date) || !checkValueValidity(value, true) || value.length() < 1)
 			throw std::invalid_argument("Error: invalid date in database");
-		double exchange = atof(line.substr(line.find(",") + 1, line.length()).c_str());
+		double exchange = atof(value.c_str());
 		this->_base[date] = exchange; 
 	}
 }
@@ -104,7 +105,7 @@ bool	BitcoinExchange::checkDateValidity(str date) {
 	return (true);
 }
 
-bool	BitcoinExchange::checkValueValidity(str value) {
+bool	BitcoinExchange::checkValueValidity(str value, bool data) {
 	int	check = std::count(value.begin(), value.end(), '.');
 
 	if (value[0] == '-'){
@@ -128,7 +129,7 @@ bool	BitcoinExchange::checkValueValidity(str value) {
 		std::cout << "Error: not a positive number." << std::endl;
 		return (false);
 	}
-	if (nbr > 1000) {
+	if (nbr > 1000 && !data) {
 		std::cout << "Error: too large number." << std::endl;
 		return (false);
 	}
@@ -217,7 +218,7 @@ void	BitcoinExchange::exchangePrice(str path) {
 		}
 		date = line.substr(0, line.find("|") - 1);
 		value = line.substr(line.find("|") + 2);
-		if (!checkDateValidity(date) || !checkValueValidity(value))
+		if (!checkDateValidity(date) || !checkValueValidity(value, false))
 			continue;
 		double v_value = atof(value.c_str());
 		base_iterator it = findExchangeRate(date);

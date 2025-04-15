@@ -6,7 +6,7 @@
 #    By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/03 21:10:14 by ptheo             #+#    #+#              #
-#    Updated: 2025/04/05 18:03:28 by ptheo            ###   ########.fr        #
+#    Updated: 2025/04/15 17:20:45 by ptheo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ OBJ_FILES = $(patsubst $(SRC_DIR)%.cpp, $(BUILD_DIR)%.o, $(SRC_FILES))
 
 DEP_FILES = $(patsubst $(SRC_DIR)%.cpp, $(BUILD_DIR)%.d, $(SRC_FILES))
 
-NAME		:= ex00
+NAME		:= btc
 CXX			:= c++
 CXXFLAGS	:=   -Wall -Wextra -Werror -I $(INCLUDES)  -std=c++98
 

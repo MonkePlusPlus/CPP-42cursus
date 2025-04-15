@@ -6,7 +6,7 @@
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 20:58:25 by ptheo             #+#    #+#             */
-/*   Updated: 2025/04/07 16:07:42 by ptheo            ###   ########.fr       */
+/*   Updated: 2025/04/15 17:22:44 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ int	main(int ac, char *av[])
 	}
 	RPN rpn;
 
-	//rpn.printStack();
 	try {
 		rpn.evaluateExpression(av[1]);
 	} catch (std::exception &e) {

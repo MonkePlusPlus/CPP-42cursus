@@ -54,6 +54,7 @@
 		"cfenv": "cpp",
 		"iomanip": "cpp",
 		"sstream": "cpp",
-		"*.tpp": "cpp"
+		"*.tpp": "cpp",
+		"list": "cpp"
 	}
 }

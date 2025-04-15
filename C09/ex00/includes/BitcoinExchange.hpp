@@ -6,7 +6,7 @@
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 17:49:32 by theo              #+#    #+#             */
-/*   Updated: 2025/04/05 20:54:37 by ptheo            ###   ########.fr       */
+/*   Updated: 2025/04/15 17:18:48 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ class BitcoinExchange
 		void	printDatabase();
 
 		bool	checkDateValidity(str data);
-		bool	checkValueValidity(str value);
+		bool	checkValueValidity(str value, bool data);
 
 		base_iterator findExchangeRate(str date);
 		bool compareDate(t_date date, base_iterator it1, base_iterator it2);
