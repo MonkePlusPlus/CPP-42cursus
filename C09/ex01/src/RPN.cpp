@@ -6,7 +6,7 @@
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 20:58:13 by ptheo             #+#    #+#             */
-/*   Updated: 2025/04/15 20:18:10 by ptheo            ###   ########.fr       */
+/*   Updated: 2025/04/17 21:32:32 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,11 @@ void	RPN::evaluateExpression(str line) {
 			if (!(line[i + 1] == ' ' || line[i + 1] == '\0'))
 				throw std::invalid_argument("Error");
 		}
-		else if ((line[i] == '*' || line[i] == '+' || line[i] == '/' || line[i] == '-') && _vstack.size() > 1)
+		else if ((line[i] == '*' || line[i] == '+' || line[i] == '/' || line[i] == '-') && _vstack.size() > 1) {
 			calculate(line[i]);
+			if (!(line[i + 1] == ' ' || line[i + 1] == '\0'))
+				throw std::invalid_argument("Error");
+		}
 		else if (line[i] == ' ')
 			continue;
 		else {
