@@ -6,7 +6,7 @@
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 17:49:23 by theo              #+#    #+#             */
-/*   Updated: 2025/04/15 17:20:06 by ptheo            ###   ########.fr       */
+/*   Updated: 2025/04/19 19:07:44 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -185,7 +185,6 @@ base_iterator BitcoinExchange::findExchangeRate(str date) {
 	base_iterator it = this->_base.begin();
 	base_iterator closer = _base.end();
 
-	it++;
 	t_date d = getDate(date);
 	while (it != _base.end()) {
 		if (compareDate(d, closer, it)) {

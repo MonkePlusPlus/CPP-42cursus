@@ -6,7 +6,7 @@
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 20:58:13 by ptheo             #+#    #+#             */
-/*   Updated: 2025/04/17 21:32:32 by ptheo            ###   ########.fr       */
+/*   Updated: 2025/04/19 19:07:27 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,6 @@ void	RPN::evaluateExpression(str line) {
 		else {
 			throw std::invalid_argument("Error");
 		}
-		i++;
 	}
 	if (_vstack.size() != 1) {
 		throw std::invalid_argument("Error");
